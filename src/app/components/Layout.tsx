@@ -1,4 +1,4 @@
-import { Outlet, useNavigate, useLocation } from "react-router";
+import { Outlet, useNavigate, useLocation, Link } from "react-router";
 import { 
   LayoutDashboard, 
   Clock, 
@@ -18,12 +18,17 @@ export function Layout() {
   const user = getCurrentUser();
   const [currentTime, setCurrentTime] = useState(new Date());
   
+  console.log('Layout rendering - location:', location.pathname);
+  
   useEffect(() => {
+    // Commented out to test if it interferes with routing
+    /*
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
     
     return () => clearInterval(timer);
+    */
   }, []);
   
   const handleLogout = () => {
@@ -71,10 +76,10 @@ export function Layout() {
               const isActive = location.pathname === item.path;
               
               return (
-                <button
+                <Link
                   key={item.path}
-                  onClick={() => navigate(item.path)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                  to={item.path}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all block ${
                     isActive 
                       ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-indigo-300 shadow-lg shadow-indigo-500/20' 
                       : 'text-gray-400 hover:bg-white/5 hover:text-white'
@@ -82,7 +87,7 @@ export function Layout() {
                 >
                   <Icon className="w-5 h-5" />
                   <span className="font-medium">{item.label}</span>
-                </button>
+                </Link>
               );
             })}
           </nav>
@@ -153,7 +158,16 @@ export function Layout() {
         
         {/* Page Content */}
         <main className="p-8 relative z-0">
+          <div className="mb-4 text-sm text-gray-500">
+            Current path: {location.pathname}
+          </div>
+          <div className="text-xs text-gray-600 mb-4">
+            Debug: Outlet rendering...
+          </div>
           <Outlet />
+          <div className="text-xs text-gray-600 mt-4">
+            Debug: Outlet rendered
+          </div>
         </main>
       </div>
     </div>

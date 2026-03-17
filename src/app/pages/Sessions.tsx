@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { format } from "date-fns";
 
 export function Sessions() {
+  console.log('Sessions component rendering...');
   const user = getCurrentUser();
   const [sessions, setSessions] = useState<Session[]>(user ? getSessions(user.id) : []);
   const [filteredSessions, setFilteredSessions] = useState<Session[]>(sessions);
