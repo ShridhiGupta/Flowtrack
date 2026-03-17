@@ -24,33 +24,56 @@ export function Stopwatch({ onSessionUpdate }: StopwatchProps) {
     if (!user) return;
     
     const session = getActiveSession(user.id);
+    console.log('Updating active session:', session);
     setActiveSession(session);
-    
-    if (session && !isPaused) {
-      const startTime = new Date(session.startTime).getTime();
-      const interval = setInterval(() => {
-        const now = Date.now();
-        const elapsed = Math.floor((now - startTime) / 1000);
-        setElapsedTime(elapsed);
-      }, 100);
-      
-      return () => clearInterval(interval);
-    }
-  }, [user, isPaused, activeSession?.id]);
-  
-  const handleStart = () => {
-    if (!user) return;
-    
-    if (!sessionName.trim()) {
-      alert("Please enter a session name");
+  }, [user]);
+
+  useEffect(() => {
+    if (!activeSession || isPaused) {
+      console.log('Timer not running:', { activeSession: !!activeSession, isPaused });
       return;
     }
     
-    const session = createSession(user.id, sessionName, sessionTag);
-    setActiveSession(session);
-    setIsPaused(false);
-    setElapsedTime(0);
-    onSessionUpdate?.();
+    console.log('Starting timer for session:', activeSession.id);
+    const startTime = new Date(activeSession.startTime).getTime();
+    console.log('Start time:', startTime, 'Current time:', Date.now());
+    
+    const interval = setInterval(() => {
+      const now = Date.now();
+      const elapsed = Math.floor((now - startTime) / 1000);
+      console.log('Timer update:', elapsed, 'seconds');
+      setElapsedTime(elapsed);
+    }, 1000); // Changed to 1 second for better performance
+    
+    return () => {
+      console.log('Clearing interval for session:', activeSession.id);
+      clearInterval(interval);
+    };
+  }, [activeSession?.id, isPaused]);
+  
+  const handleStart = () => {
+    if (!user) {
+      console.error('No user found - please login first');
+      return;
+    }
+    
+    if (!sessionName.trim()) {
+      console.error('Session name is required');
+      return;
+    }
+    
+    console.log('Starting session:', { userId: user.id, sessionName, sessionTag });
+    
+    try {
+      const session = createSession(user.id, sessionName, sessionTag);
+      console.log('Session created:', session);
+      setActiveSession(session);
+      setIsPaused(false);
+      setElapsedTime(0);
+      onSessionUpdate?.();
+    } catch (error) {
+      console.error('Failed to create session:', error);
+    }
   };
   
   const handlePause = () => {

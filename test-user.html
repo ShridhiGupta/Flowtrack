@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test User Setup</title>
+</head>
+<body>
+    <h1>Flowtrack User Setup</h1>
+    <button onclick="setupTestUser()">Setup Test User</button>
+    <button onclick="checkUser()">Check Current User</button>
+    <button onclick="clearUser()">Clear User</button>
+    
+    <script>
+        function setupTestUser() {
+            const testUser = {
+                id: 'test-user-123',
+                name: 'Test User',
+                email: 'test@example.com',
+                role: 'developer',
+                createdAt: new Date().toISOString()
+            };
+            
+            localStorage.setItem('user', JSON.stringify(testUser));
+            alert('Test user created! Refresh the app to test the stopwatch.');
+        }
+        
+        function checkUser() {
+            const user = localStorage.getItem('user');
+            if (user) {
+                console.log('Current user:', JSON.parse(user));
+                alert('User found: ' + JSON.parse(user).name);
+            } else {
+                alert('No user found in localStorage');
+            }
+        }
+        
+        function clearUser() {
+            localStorage.removeItem('user');
+            alert('User cleared from localStorage');
+        }
+    </script>
+</body>
+</html>

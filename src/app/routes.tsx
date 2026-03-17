@@ -7,6 +7,7 @@ import { Sessions } from "./pages/Sessions";
 import { Analytics } from "./pages/Analytics";
 import { AboutMe } from "./pages/AboutMe";
 import { Settings } from "./pages/Settings";
+import { AuthSetup } from "./pages/AuthSetup";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 export const router = createBrowserRouter([
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     Component: Register,
+  },
+  {
+    path: "/setup",
+    Component: AuthSetup,
   },
   {
     path: "/",

@@ -15,7 +15,10 @@ export const getSessions = (userId: string): Session[] => {
 };
 
 export const createSession = (userId: string, name: string, tag: string): Session => {
+  console.log('Creating session:', { userId, name, tag });
+  
   const sessions = JSON.parse(localStorage.getItem('sessions') || '[]');
+  console.log('Current sessions:', sessions);
   
   const newSession: Session = {
     id: Math.random().toString(36).substr(2, 9),
@@ -30,6 +33,7 @@ export const createSession = (userId: string, name: string, tag: string): Sessio
   
   sessions.push(newSession);
   localStorage.setItem('sessions', JSON.stringify(sessions));
+  console.log('Session saved:', newSession);
   return newSession;
 };
 
@@ -69,7 +73,10 @@ export const endSession = (sessionId: string): Session | null => {
 
 export const getActiveSession = (userId: string): Session | null => {
   const sessions = getSessions(userId);
-  return sessions.find(s => s.isActive) || null;
+  console.log('Getting active session for user:', userId, 'Available sessions:', sessions);
+  const activeSession = sessions.find(s => s.isActive) || null;
+  console.log('Active session found:', activeSession);
+  return activeSession;
 };
 
 export const formatDuration = (seconds: number): string => {
