@@ -182,7 +182,6 @@ Contributions are welcome.
 ---
 
 ## License
-
 MIT License
 
 ⭐ If you find this project useful, consider giving it a star and contributing to its growth.
