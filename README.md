@@ -185,12 +185,4 @@ Contributions are welcome.
 
 MIT License
 
----
-
-## Author
-
-**Shridhi Gupta**
-
-Passionate about building productivity-focused applications, AI-powered systems, and user-centric digital experiences.
-
 ⭐ If you find this project useful, consider giving it a star and contributing to its growth.
