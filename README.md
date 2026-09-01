@@ -1,24 +1,24 @@
-# 🚀 FlowTrack
+# FlowTrack
 
 FlowTrack is a modern productivity and workflow management application designed to help individuals and teams organize tasks, track progress, manage time efficiently, and improve overall productivity. Built with modern web technologies, FlowTrack provides a clean and responsive user experience for managing daily activities and long-term goals.
 
-## ✨ Features
+## Features
 
-### 📋 Task Management
+### Task Management
 
 * Create, edit, and organize tasks
 * Track task completion status
 * Prioritize important activities
 * Manage daily and long-term goals
 
-### ⏱️ Productivity Tracking
+### Productivity Tracking
 
 * Built-in stopwatch and timer functionality
 * Track focused work sessions
 * Monitor productivity trends
 * Measure task completion efficiency
 
-### 🔐 User Authentication
+### User Authentication
 
 * Secure user authentication system
 * Personalized workspace
