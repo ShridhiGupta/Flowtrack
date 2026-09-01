@@ -25,14 +25,14 @@ FlowTrack is a modern productivity and workflow management application designed 
 * Protected user data and settings
 * Session management support
 
-### 📊 Workflow Organization
+### Workflow Organization
 
 * Organize projects and workflows
 * Visual task tracking
 * Progress monitoring
 * Streamlined productivity management
 
-### 🎨 Modern User Experience
+### Modern User Experience
 
 * Responsive design across devices
 * Clean and intuitive interface
@@ -41,7 +41,7 @@ FlowTrack is a modern productivity and workflow management application designed 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -63,7 +63,7 @@ FlowTrack is a modern productivity and workflow management application designed 
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 FlowTrack/
@@ -81,7 +81,7 @@ FlowTrack/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Clone the Repository
 
@@ -110,7 +110,7 @@ http://localhost:5173
 
 ---
 
-## 🌐 Live Demo
+## Live Demo
 
 Explore the live application:
 
@@ -118,7 +118,7 @@ Explore the live application:
 
 ---
 
-## 🎯 Key Benefits
+## Key Benefits
 
 * Improve productivity and focus
 * Track work sessions effectively
@@ -128,7 +128,7 @@ Explore the live application:
 
 ---
 
-## 💡 Use Cases
+## Use Cases
 
 ### Students
 
@@ -156,7 +156,7 @@ Explore the live application:
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 * Analytics dashboard
 * Pomodoro timer integration
@@ -169,7 +169,7 @@ Explore the live application:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome.
 
@@ -181,13 +181,13 @@ Contributions are welcome.
 
 ---
 
-## 📄 License
+## License
 
 MIT License
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Shridhi Gupta**
 
