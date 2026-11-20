@@ -179,9 +179,6 @@ Contributions are welcome.
 4. Push your branch
 5. Open a Pull Request
 
----
-
-## License
 
 
 ⭐ If you find this project useful, consider giving it a star and contributing to its growth.
